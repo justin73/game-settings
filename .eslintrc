@@ -1,0 +1,72 @@
+{
+  "extends": [
+    "plugin:prettier/recommended",
+    "prettier/flowtype",
+    "prettier/react",
+    "prettier/standard"
+  ],
+  "parserOptions": {
+    "sourceType": "module",
+    "ecmaVersion": 2018,
+    "ecmaFeatures": {
+      "experimentalObjectRestSpread": true
+    }
+  },
+  "parser": "babel-eslint",
+  "env": {
+    "browser": true
+  },
+  "plugins": ["react", "react-hooks", "jsx-a11y", "eslint-plugin-import"],
+  "rules": {
+    "react/jsx-uses-react": "off",
+    "react/react-in-jsx-scope": "off",
+    "react/prop-types": 1,
+    "jsx-a11y/aria-role": [
+      2,
+      {
+        "ignoreNonDOM": true
+      }
+    ],
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
+    "prettier/prettier": [
+      "error",
+      {
+        "semi": false,
+        "arrowParens": "avoid",
+        "trailingComma": "none",
+        "endOfLine": "auto"
+      }
+    ],
+    "import/order": [
+      "error",
+      {
+        "groups": ["builtin", "external", "internal"],
+        "pathGroups": [
+          {
+            "pattern": "react",
+            "group": "external",
+            "position": "before"
+          }
+        ],
+        "pathGroupsExcludedImportTypes": ["react"],
+        "newlines-between": "never",
+        "alphabetize": {
+          "order": "asc",
+          "caseInsensitive": true
+        }
+      }
+    ],
+    "react/jsx-sort-props": [
+      1,
+      {
+        "callbacksLast": true,
+        "shorthandFirst": true,
+        "ignoreCase": true,
+        "noSortAlphabetically": false,
+        "reservedFirst": false
+      }
+    ],
+    "react/jsx-max-props-per-line": [1, { "maximum": 8, "when": "always" }]
+  }
+}

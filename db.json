@@ -1,0 +1,30 @@
+{
+  "parameters": [
+    {
+      "id": "123",
+      "title": "Difficulty",
+      "description": "A simple form example.",
+      "type": "object",
+      "properties": {
+        "level": {
+          "type": "string"
+        },
+        "maxEnemyCount": {
+          "type": "number"
+        }
+      }
+    }
+  ],
+  "templates": [
+    {
+      "paramId": "123",
+      "title": "1",
+      "description": "1",
+      "formData": {
+        "level": "easy",
+        "maxEnemyCount": 6
+      },
+      "id": 1
+    }
+  ]
+}
