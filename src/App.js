@@ -10,7 +10,7 @@ export const App = () => (
     <Helmet title={`Unity FE Test`} />
     <Router>
       <GlobalStyle />
-      <div className="app">
+      <div className="app" data-testid="app-box">
         <AppRoutes />
       </div>
     </Router>
