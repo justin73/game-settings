@@ -18,11 +18,23 @@ const ParamList = () => {
     dispatch(loadParamList())
   }, [dispatch])
 
+  const loadTempForParam = id => {
+    if (selectedParam?.id === id) return
+    dispatch(setSelectedParam(id))
+    dispatch(loadTempList({ paramId: id }))
+  }
+
   return (
     <ListWrapper>
       <StyledParamList>
         {paramList.map(param => (
-          <p>{param.title}</p>
+          <ParamItem
+            key={param.id}
+            selected={selectedParam?.id === param.id}
+            onClick={() => loadTempForParam(param.id)}
+          >
+            {param.title}
+          </ParamItem>
         ))}
       </StyledParamList>
     </ListWrapper>
