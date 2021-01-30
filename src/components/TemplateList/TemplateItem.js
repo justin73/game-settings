@@ -23,7 +23,9 @@ const TemplateItem = ({ schema, data, onDelete, ...props }) => (
       >
         <Typography>{data.title}</Typography>
       </AccordionSummary>
-      <AccordionDetails>about to render form</AccordionDetails>
+      <AccordionDetails>
+        <Form data={data} schema={schema} {...props} />
+      </AccordionDetails>
     </Accordion>
     <IconButton data-testid="delBtn" disabled={!data.id} onClick={onDelete}>
       <DeleteIcon />

@@ -2,7 +2,7 @@ import styled from "styled-components"
 
 export const ListWrapper = styled.div`
   width: 30vw;
-  background: #233559;
+  background: #2a353c;
   display: flex;
   align-items: flex-start;
   height: 80vh;

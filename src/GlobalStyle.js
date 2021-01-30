@@ -11,7 +11,7 @@ WebFont.load({
   }
 })
 const GlobalStyle = createGlobalStyle`
-  .App {
+  .app {
       text-align: center;
       min-height: 100vh;
       background: #031926;
@@ -111,13 +111,6 @@ body {
   caret-color: var(--text-color);
 }
 
-@media (prefers-color-scheme: dark) {
-  body {
-    color: white;
-    background-color: var(--gray-900);
-    caret-color: white;
-  }
-}
 
 /* Typography
 ––––––––––––––––––––––––––––––––– */

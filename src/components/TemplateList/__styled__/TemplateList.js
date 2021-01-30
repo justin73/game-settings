@@ -6,7 +6,7 @@ import styled from "styled-components"
 
 export const ListWrapper = styled.div`
   width: calc(65vw - 20px);
-  background: #233559;
+  background: #2a353c;
   display: flex;
   align-items: ${props => (props.selected ? "flex-start" : "center")};
   justify-content: ${props => (props.selected ? "flex-start" : "center")};
@@ -83,7 +83,7 @@ export const StlyedAccordion = styled(
     border: ${props => (props.temporary ? `3px dotted #9e9e9e` : "none")};
     width: unset !important;
     height: unset !important;
-    background-color: #4e5b6c;
+    background-color: #46536d;
     border-radius: 5px;
     margin-bottom: 5px;
     flex: 1;
