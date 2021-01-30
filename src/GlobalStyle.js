@@ -499,45 +499,6 @@ input[type="button"]:focus-visible {
   outline: none;
 }
 
-/* Tables
-––––––––––––––––––––––––––––––––– */
-table {
-  width: 100%;
-  border-spacing: 0;
-  margin-bottom: 1.563rem;
-  font-variant-numeric: tabular-nums;
-}
-
-th,
-td {
-  padding: 0.5rem 0.5rem 0.5rem 0;
-  margin: 0;
-}
-
-th {
-  font-weight: bold;
-  text-align: left;
-  border-bottom: 2px solid var(--gray-300);
-  color: var(--gray-300);
-}
-
-@media (prefers-color-scheme: dark) {
-  th {
-    border-color: var(--gray-700);
-    color: var(--gray-700);
-  }
-}
-
-td {
-  border-bottom: 2px solid var(--gray-300);
-}
-
-@media (prefers-color-scheme: dark) {
-  td {
-    border-color: var(--gray-700);
-  }
-}
-
 /* Code
 ––––––––––––––––––––––––––––––––– */
 code {
