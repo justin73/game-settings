@@ -3,7 +3,6 @@ import styled from "styled-components"
 
 const StyledSelect = styled.select`
   color: var(--blue);
-  color: white;
 `
 
 const StyledErrorMessage = styled.div`
@@ -46,10 +45,11 @@ const FormMeta = styled.div`
 `
 
 const FormFields = styled.div`
-  border: 1px solid #657b92;
+  border: 2px solid #657b92;
   padding: 30px;
   padding-top: 10px;
   margin-top: 20px;
+  border-radius: 5px;
 `
 const FormField = styled.div`
   display: flex;

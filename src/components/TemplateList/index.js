@@ -25,12 +25,17 @@ const TemplateList = () => {
         ...selectedParam.properties[fieldName]
       })
     })
+
+    const mappedData = templateFields.map(item => ({
+      [item.name]: item.type === "string" ? "" : 0
+    }))
+
     dispatch(
       addNewTemp({
         paramId: selectedParam.id,
         title: "",
         description: "",
-        formData: { level: "", maxEnemyCount: 5 }
+        formData: Object.assign({}, ...mappedData)
       })
     )
   }

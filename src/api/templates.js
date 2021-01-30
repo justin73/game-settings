@@ -1,6 +1,6 @@
 export const getTemplates = ({ get, url }) => paramId =>
   get({
-    url: url(`/templates?schemaId=${paramId}`)
+    url: url(`/templates?paramId=${paramId}`)
   })
 
 export const createTemplate = ({ post, url }) => data =>

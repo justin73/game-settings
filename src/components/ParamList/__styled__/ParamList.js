@@ -2,7 +2,7 @@ import styled from "styled-components"
 
 export const ListWrapper = styled.div`
   width: 30vw;
-  background: #2a353c;
+  background: var(--black-200);
   display: flex;
   align-items: flex-start;
   height: 80vh;
@@ -17,13 +17,13 @@ export const ParamList = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  color: #eef4f2;
+  color: var(--blue-100);
   padding-top: 15px;
 `
 
 export const ParamItem = styled.li`
   width: 90%;
-  background: ${props => (props.selected ? "#4e5b6c;" : "#20465b")};
+  background: ${props => (props.selected ? "#4e5b6c;" : "#46536d")};
   padding: 20px;
   border-radius: 5px;
   margin: 10px 0px;

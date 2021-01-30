@@ -1,12 +1,10 @@
 import { IconButton } from "@material-ui/core"
 import Accordion from "@material-ui/core/Accordion"
-import AccordionDetails from "@material-ui/core/AccordionDetails"
-import AccordionSummary from "@material-ui/core/AccordionSummary"
 import styled from "styled-components"
 
 export const ListWrapper = styled.div`
   width: calc(65vw - 20px);
-  background: #2a353c;
+  background: var(--black-200);
   display: flex;
   align-items: ${props => (props.selected ? "flex-start" : "center")};
   justify-content: ${props => (props.selected ? "flex-start" : "center")};
@@ -36,7 +34,7 @@ export const EmptyText = styled.h1`
 `
 
 export const Button = styled.button`
-  color: white;
+  color: var(--blue-100);
   background-color: #438c54;
   padding: 10px;
   font-weight: 900;
@@ -59,7 +57,7 @@ export const StyledIconButton = styled(({ children, ...others }) => (
     width: 48px;
     height: 48px;
     svg {
-      color: white;
+      color: var(--blue-100);
     }
   }
 `
@@ -79,7 +77,7 @@ export const StlyedAccordion = styled(
   )
 )`
   &.styledAccordion {
-    color: white;
+    color: var(--blue-100);
     border: ${props => (props.temporary ? `3px dotted #9e9e9e` : "none")};
     width: unset !important;
     height: unset !important;
@@ -88,7 +86,7 @@ export const StlyedAccordion = styled(
     margin-bottom: 5px;
     flex: 1;
     svg {
-      color: white;
+      color: var(--blue-100);
     }
   }
 `
