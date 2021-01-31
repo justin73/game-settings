@@ -1,7 +1,7 @@
 import styled from "styled-components"
 
 const PageContent = styled.div`
-  width: 100vw;
+  width: calc(100vw - 60px);
   height: 100vh;
   padding: 20px 30px;
   background-color: #031926;

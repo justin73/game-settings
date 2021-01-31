@@ -32,6 +32,11 @@ export const mapToFields = ({ field }) => {
         fieldType,
         ...(field.enum && { options: field.enum })
       }
+    case "boolean":
+      return {
+        type: "checkbox",
+        fieldType
+      }
     default:
       return
   }

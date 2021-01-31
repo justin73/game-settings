@@ -31,7 +31,7 @@ const SchemaForm = ({ schema }) => {
     switch (field.fieldType) {
       case "select":
         return (
-          <SelectField {...fieldProps} key={nanoid()}>
+          <SelectField {...fieldProps}>
             <option value="">Select A Difficulty Level</option>
             {field.options.map((option, index) => (
               <option key={index} value={option}>
@@ -40,8 +40,11 @@ const SchemaForm = ({ schema }) => {
             ))}
           </SelectField>
         )
+      case "checkbox":
+        return <CheckboxField {...fieldProps} />
+
       default:
-        return <TextInputField {...fieldProps} key={nanoid()} />
+        return <TextInputField {...fieldProps} />
     }
   })
 }

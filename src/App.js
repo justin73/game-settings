@@ -3,6 +3,7 @@ import Helmet from "react-helmet"
 import { Provider as StoreProvider } from "react-redux"
 import { BrowserRouter as Router } from "react-router-dom"
 import AppRoutes from "./AppRoutes"
+import SideNav from "./components/SideNav"
 import GlobalStyle from "./GlobalStyle"
 import store from "./store"
 
@@ -13,6 +14,7 @@ export const App = () => (
     <Router>
       <GlobalStyle />
       <div className="app" data-testid="app-box">
+        <SideNav />
         <AppRoutes />
       </div>
     </Router>

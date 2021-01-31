@@ -16,6 +16,7 @@ const GlobalStyle = createGlobalStyle`
       min-height: 100vh;
       background: #031926;
       color: #eef4f2;
+      display: flex;
   }
   body {
     margin: 0;
