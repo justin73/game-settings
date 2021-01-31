@@ -1,70 +1,48 @@
-# Getting Started with Create React App
+# Game Setting Configuration Tool
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+- [Table of content](#table-of-content)
+  - [🚀 Getting Started](#%f0%9f%9a%80-getting-started)
+  - [📚 Dependencies and ecosystem](#%f0%9f%93%9a-dependencies-and-ecosystem)
+  - [Implementation](implementation)
 
-## Available Scripts
+## 🚀 Getting Started
 
-In the project directory, you can run:
+First, clone the repo to your local machine.
 
-### `yarn start`
+Then, install dependencies
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+```sh
+npm install
+```
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+In this demo, I used json-server as a mock server which supports some basic CRUD operations, so in order to get mock data, there is a prerequisit condition, you need to install the json-server
 
-### `yarn test`
+```sh
+npm install -g json-server
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Then you can simply run `npm run server` then `npm start` to run the project in your local environment
 
-### `yarn build`
+## 📚 Dependencies and ecosystem
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+This project was started with [Create React App](https://github.com/facebook/create-react-app) and uses a standard tech stack:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- [React](https://reactjs.org)
+- [Redux](https://redux.js.org)
+- [React-Router](https://github.com/ReactTraining/react-router)
+- [styled-components](https://www.styled-components.com)
+- [Storybook](https://storybook.js.org/)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Some small but powerful third party libs used in the project:
 
-### `yarn eject`
+- [selector library for redux](https://github.com/reduxjs/reselect#readme)
+- [loadable](https://loadable-components.com/) for code split
+- [json server](https://github.com/typicode/json-server) to get a full fake REST API
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+I also used some utilities to standardize the code format and formalize the commit messages
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+[prettier](https://prettier.io) and [commitlint](https://commitlint.js.org/#/) respectively for code and commit message formatting, along with [husky](https://github.com/typicode/husky) for automation based on git hooks.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Implementation
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Data Structure

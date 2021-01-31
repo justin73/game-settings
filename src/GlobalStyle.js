@@ -11,7 +11,7 @@ WebFont.load({
   }
 })
 const GlobalStyle = createGlobalStyle`
-  .App {
+  .app {
       text-align: center;
       min-height: 100vh;
       background: #031926;
@@ -68,6 +68,8 @@ html {
 }
 
 :root {
+  --black-200:#2a353c;
+  --green-200:#438c54
   --gray-900: #1a202c;
   --gray-800: #2d3748;
   --gray-700: #4a5568;
@@ -111,13 +113,6 @@ body {
   caret-color: var(--text-color);
 }
 
-@media (prefers-color-scheme: dark) {
-  body {
-    color: white;
-    background-color: var(--gray-900);
-    caret-color: white;
-  }
-}
 
 /* Typography
 ––––––––––––––––––––––––––––––––– */
@@ -497,45 +492,6 @@ input[type="reset"]:focus-visible,
 input[type="button"]:focus-visible {
   border-color: var(--focus-ring-color);
   outline: none;
-}
-
-/* Tables
-––––––––––––––––––––––––––––––––– */
-table {
-  width: 100%;
-  border-spacing: 0;
-  margin-bottom: 1.563rem;
-  font-variant-numeric: tabular-nums;
-}
-
-th,
-td {
-  padding: 0.5rem 0.5rem 0.5rem 0;
-  margin: 0;
-}
-
-th {
-  font-weight: bold;
-  text-align: left;
-  border-bottom: 2px solid var(--gray-300);
-  color: var(--gray-300);
-}
-
-@media (prefers-color-scheme: dark) {
-  th {
-    border-color: var(--gray-700);
-    color: var(--gray-700);
-  }
-}
-
-td {
-  border-bottom: 2px solid var(--gray-300);
-}
-
-@media (prefers-color-scheme: dark) {
-  td {
-    border-color: var(--gray-700);
-  }
 }
 
 /* Code
