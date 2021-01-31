@@ -14,7 +14,6 @@ export const handleParamLoad = function* () {
   } catch (err) {
     if (err.message === "Network Error") {
       yield put(setNetworkError())
-      throw err
     }
 
     yield put(loadParamListFail(err))

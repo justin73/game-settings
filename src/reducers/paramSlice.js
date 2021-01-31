@@ -33,21 +33,16 @@ const ParamSlice = createSlice({
     },
     loadParamListFail: {
       reducer: (state, action) => {
-        const { error } = action.payload
         return {
           ...state,
           isLoading: false,
-          error: { ...error }
+          error: { ...action.payload }
         }
       },
       prepare: ({ errCode, errMsg, type }) => ({
-        payload: {
-          error: {
-            code: errCode,
-            msg: errMsg,
-            type
-          }
-        }
+        code: errCode,
+        msg: errMsg,
+        type
       })
     },
     reset: state => ({
