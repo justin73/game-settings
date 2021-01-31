@@ -68,6 +68,9 @@ export const ItemWrapper = styled.div`
   justify-content: center;
   margin-bottom: 10px;
   width: 100%;
+  .styledAccordion {
+    border: ${props => (props.temp ? `3px dotted #9e9e9e` : "none")};
+  }
 `
 export const StlyedAccordion = styled(
   ({ children, root, temporary, error, ...others }) => (
@@ -78,7 +81,7 @@ export const StlyedAccordion = styled(
 )`
   &.styledAccordion {
     color: var(--blue-100);
-    border: ${props => (props.temporary ? `3px dotted #9e9e9e` : "none")};
+
     width: unset !important;
     height: unset !important;
     background-color: #46536d;

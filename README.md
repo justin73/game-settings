@@ -45,4 +45,68 @@ I also used some utilities to standardize the code format and formalize the comm
 
 ## Implementation
 
-Data Structure
+### **1. Structure**
+
+### `/api`
+
+the api modules could ease the work when adding a new endpoint with minimum duplicated code
+
+### `/pages`
+
+it defines different routes. Currently only has the main feature which is the parameter. More could be added to support consuming the parameter templates, such as in a game config editor
+
+### `/sagas`
+
+it contains all the redux/sagas where it handles all the async logic, ask all the CRUD operations
+
+### `/reducers`
+
+it uses the redux/toolkit and the duck pattern, reduced a lot of boilerplate from the old way
+
+### `/selectors`
+
+it is used to compute derived data
+
+### `/components`
+
+it contains all the components used in this app
+
+#### **Component Structure**
+
+**styled**: containers all the related styled component for a given component
+
+**test**: test cases for a given component
+
+**About container and presentational components**, in general, the rule of thumb is that i use `index.js` file to serve as the container for a given component, and all the remaining files under the same folder are presentational components
+
+### **2. Form**
+
+The parameter form is rendered based on the parameter schema. Currently due to the time constraint, only support basic schema (one level object based) with limited fields.
+
+Supported Schema format:
+
+```
+{
+      "id": "XXX",
+      "title": "XXX",
+      "description": "XXX",
+      "type": "object",
+      "properties": {
+        "XXX": {
+          "type": "string",
+          "enum": [
+            "easy",
+            "hard"
+          ]
+        },
+        "XX": {
+          "type": "number"
+        }
+      }
+    }
+```
+
+Supported form fields:
+
+- `Text`,`Number` input
+- `Enum` dropdown

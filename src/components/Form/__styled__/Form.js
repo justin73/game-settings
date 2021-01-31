@@ -60,6 +60,9 @@ const FormField = styled.div`
     margin-top: 0px;
     margin-right: 10px;
   }
+  input {
+    width: 100%;
+  }
 `
 const FormAction = styled.div`
   width: 100%;

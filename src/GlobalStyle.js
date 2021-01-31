@@ -259,7 +259,7 @@ input[type="text"],
 input[type="number"],
 textarea,
 select {
-  width: 400px;
+  width: 100%;
 }
 
 select {

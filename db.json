@@ -31,16 +31,30 @@
           "type": "number"
         }
       }
+    },
+    {
+      "id": "789",
+      "title": "Warning Log",
+      "description": "Another simple form example.",
+      "type": "object",
+      "properties": {
+        "message": {
+          "type": "string"
+        },
+        "numOfTimes": {
+          "type": "number"
+        }
+      }
     }
   ],
   "templates": [
     {
       "paramId": "123",
-      "title": "123",
+      "title": "template 1",
       "description": "123",
       "formData": {
-        "level": "hard",
-        "maxEnemyCount": 23
+        "level": "easy",
+        "maxEnemyCount": 12
       },
       "level": "111",
       "id": 1
@@ -64,6 +78,26 @@
         "radius": 2
       },
       "id": 3
+    },
+    {
+      "paramId": "789",
+      "title": "11",
+      "description": "111",
+      "formData": {
+        "message": "11",
+        "numOfTimes": 2
+      },
+      "id": 4
+    },
+    {
+      "paramId": "789",
+      "title": "123",
+      "description": "1232",
+      "formData": {
+        "message": "1111",
+        "numOfTimes": 1
+      },
+      "id": 5
     }
   ]
 }

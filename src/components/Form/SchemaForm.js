@@ -5,30 +5,6 @@ import TextInputField from "./TextInput"
 import { convertSchemaToForm } from "./utils/covertSchema"
 import { getFormInfo } from "./utils/mapToFields"
 
-export const renderFields = ({ fields }) =>
-  fields.map(field => {
-    const fieldProps = {
-      id: field.id,
-      label: field.id,
-      name: `formData.${field.id}`,
-      type: field.type,
-      key: nanoid()
-    }
-    switch (field.fieldType) {
-      case "select":
-        return (
-          <SelectField {...fieldProps}>
-            <option value="">Select A Difficulty Level</option>
-            {field.options.map(option => (
-              <option value={option}>{option}</option>
-            ))}
-          </SelectField>
-        )
-      default:
-        return <TextInputField {...fieldProps} />
-    }
-  })
-
 const SchemaForm = ({ schema }) => {
   const [fields, setFields] = useState([])
   useEffect(() => {
@@ -43,8 +19,29 @@ const SchemaForm = ({ schema }) => {
     setFields(fieldStruc)
   }, [schema])
 
-  return renderFields({
-    fields
+  return fields.map(field => {
+    const fieldProps = {
+      id: field.id,
+      label: field.id,
+      name: `formData.${field.id}`,
+      type: field.type,
+      key: nanoid()
+    }
+    switch (field.fieldType) {
+      case "select":
+        return (
+          <SelectField {...fieldProps} key={nanoid()}>
+            <option value="">Select A Difficulty Level</option>
+            {field.options.map((option, index) => (
+              <option key={index} value={option}>
+                {option}
+              </option>
+            ))}
+          </SelectField>
+        )
+      default:
+        return <TextInputField {...fieldProps} key={nanoid()} />
+    }
   })
 }
 

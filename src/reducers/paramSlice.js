@@ -52,6 +52,13 @@ const ParamSlice = createSlice({
     },
     reset: state => ({
       ...state
+    }),
+    setNetworkError: state => ({
+      ...state,
+      error: {
+        code: "511",
+        msg: "Network error, please make sure you start the json server"
+      }
     })
   }
 })
@@ -61,7 +68,8 @@ export const {
   loadParamListSuccess,
   loadParamListFail,
   reset,
-  setSelectedParam
+  setSelectedParam,
+  setNetworkError
 } = ParamSlice.actions
 
 export default ParamSlice.reducer

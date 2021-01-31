@@ -1,10 +1,10 @@
-import React, { useState } from "react"
+import { useState, useEffect } from "react"
 import { Formik } from "formik"
 import { PropTypes } from "prop-types"
 import { useDispatch, useSelector } from "react-redux"
 import { submitTemp } from "../../reducers/templateSlice"
 import { getSelectedParam } from "../../selectors"
-import { DifficultySchema, DamageSchema, MetaSchema } from "../Schemas"
+import { DifficultySchema, DamageSchema, WarningSchema } from "../Schemas"
 import {
   FormWrapper,
   FormMeta,
@@ -18,6 +18,23 @@ import TextInputField from "./TextInput"
 const TempForm = ({ data }) => {
   const dispatch = useDispatch()
   const selectedParam = useSelector(state => getSelectedParam(state))
+  const [validationSchema, setValidationSchema] = useState({})
+
+  useEffect(() => {
+    setValidationSchema(
+      (() => {
+        switch (selectedParam.id) {
+          case "123":
+            return DifficultySchema
+          case "456":
+            return DamageSchema
+          default:
+            return WarningSchema
+        }
+      })()
+    )
+  }, [selectedParam.id])
+
   const onSubmit = async values => {
     dispatch(submitTemp(values))
   }
@@ -26,9 +43,7 @@ const TempForm = ({ data }) => {
     <FormWrapper>
       <Formik
         initialValues={data}
-        validationSchema={
-          selectedParam.id === "123" ? DifficultySchema : DamageSchema
-        }
+        validationSchema={validationSchema}
         onSubmit={onSubmit}
       >
         <Form>

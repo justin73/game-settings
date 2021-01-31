@@ -1,4 +1,3 @@
-import React from "react"
 import AccordionDetails from "@material-ui/core/AccordionDetails"
 import AccordionSummary from "@material-ui/core/AccordionSummary"
 import Typography from "@material-ui/core/Typography"
@@ -14,20 +13,20 @@ import {
 } from "./__styled__/TemplateList"
 
 const TemplateItem = ({ schema, data, onDelete, ...props }) => (
-  <ItemWrapper>
+  <ItemWrapper temp={!data.id}>
     <Accordion>
       <AccordionSummary
         aria-controls="panel1a-content"
         expandIcon={<ExpandMoreIcon />}
         id={`${nanoid()}-header`}
       >
-        <Typography>{data.title}</Typography>
+        <Typography>{data.id ? data.title : "New Template"}</Typography>
       </AccordionSummary>
       <AccordionDetails>
         <Form data={data} schema={schema} {...props} />
       </AccordionDetails>
     </Accordion>
-    <IconButton data-testid="delBtn" disabled={!data.id} onClick={onDelete}>
+    <IconButton data-testid="delBtn" onClick={onDelete}>
       <DeleteIcon />
     </IconButton>
   </ItemWrapper>
@@ -43,10 +42,7 @@ TemplateItem.propTypes = {
     ]),
     title: PropTypes.string.isRequired,
     description: PropTypes.string,
-    formData: PropTypes.shape({
-      level: PropTypes.string.isRequired,
-      maxEnemyCount: PropTypes.number.isRequired
-    })
+    formData: PropTypes.object.isRequired
   }),
   onDelete: PropTypes.func
 }

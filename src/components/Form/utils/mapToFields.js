@@ -22,7 +22,7 @@ export const mapToFields = ({ field }) => {
   switch (field.type) {
     case "string":
       return {
-        type: "string",
+        type: "text",
         fieldType,
         ...(field.enum && { options: field.enum })
       }

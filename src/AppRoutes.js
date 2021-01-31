@@ -1,4 +1,4 @@
-import React, { Suspense } from "react"
+import { Suspense } from "react"
 import { lazy } from "@loadable/component"
 import { Switch, Route } from "react-router-dom"
 

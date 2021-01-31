@@ -33,6 +33,7 @@
     "shortid": "^2.2.16",
     "storybook": "^6.1.5",
     "styled-components": "^5.1.1",
+    "use-state-with-callback": "^2.0.3",
     "webfontloader": "^1.6.28",
     "yup": "^0.32.8"
   },

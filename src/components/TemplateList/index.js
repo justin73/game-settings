@@ -1,7 +1,10 @@
-import React from "react"
 import { nanoid } from "@reduxjs/toolkit"
 import { useSelector, useDispatch } from "react-redux"
-import { addNewTemp, deleteTemp } from "../../reducers/templateSlice"
+import {
+  addNewTemp,
+  deleteTemp,
+  removeTemp
+} from "../../reducers/templateSlice"
 import { getTempList, getSelectedParam } from "../../selectors"
 import ErrorBoundary from "../ErrorBoundary"
 import {
@@ -40,8 +43,12 @@ const TemplateList = () => {
     )
   }
 
-  const onDelete = template => {
-    dispatch(deleteTemp(template))
+  const onDelete = (template, index) => {
+    if (template.id) {
+      dispatch(deleteTemp(template))
+    } else {
+      dispatch(removeTemp(index))
+    }
   }
 
   return (
@@ -53,12 +60,12 @@ const TemplateList = () => {
               Create
             </Button>
           </ActionSection>
-          {tempList.map(template => (
+          {tempList.map((template, index) => (
             <TemplateItem
               data={template}
               key={nanoid()}
               schema={selectedParam}
-              onDelete={() => onDelete(template)}
+              onDelete={() => onDelete(template, index)}
             />
           ))}
         </ErrorBoundary>
