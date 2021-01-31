@@ -1,3 +1,4 @@
+import React from "react"
 import AccordionDetails from "@material-ui/core/AccordionDetails"
 import AccordionSummary from "@material-ui/core/AccordionSummary"
 import Typography from "@material-ui/core/Typography"
@@ -13,7 +14,7 @@ import {
 } from "./__styled__/TemplateList"
 
 const TemplateItem = ({ schema, data, onDelete, ...props }) => (
-  <ItemWrapper temp={!data.id}>
+  <ItemWrapper role="item" temp={!data.id}>
     <Accordion>
       <AccordionSummary
         aria-controls="panel1a-content"
@@ -26,7 +27,7 @@ const TemplateItem = ({ schema, data, onDelete, ...props }) => (
         <Form data={data} schema={schema} {...props} />
       </AccordionDetails>
     </Accordion>
-    <IconButton data-testid="delBtn" onClick={onDelete}>
+    <IconButton role="del" onClick={onDelete}>
       <DeleteIcon />
     </IconButton>
   </ItemWrapper>
