@@ -3,9 +3,9 @@ import ContentBox from "../components/ContentBox"
 import ErrorBoundary from "../components/ErrorBoundary"
 import { PageContent } from "./__styled__"
 
-const ParamPage = props => (
+const ParamPage = () => (
   <PageContent horizontal={true}>
-    <h1>Parameter</h1>
+    <h1>Game Setting Parameter</h1>
     <ErrorBoundary title=" Make sure Mock server is on">
       <ContentBox page="param" />
     </ErrorBoundary>

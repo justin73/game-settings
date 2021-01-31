@@ -7,9 +7,41 @@
       "type": "object",
       "properties": {
         "level": {
-          "type": "string"
+          "type": "string",
+          "enum": [
+            "easy",
+            "hard"
+          ]
         },
         "maxEnemyCount": {
+          "type": "number"
+        }
+      }
+    },
+    {
+      "id": "456",
+      "title": "Grande Damage",
+      "description": "Another simple form example.",
+      "type": "object",
+      "properties": {
+        "damage": {
+          "type": "number"
+        },
+        "radius": {
+          "type": "number"
+        }
+      }
+    },
+    {
+      "id": "789",
+      "title": "Warning Log",
+      "description": "Another simple form example.",
+      "type": "object",
+      "properties": {
+        "message": {
+          "type": "string"
+        },
+        "numOfTimes": {
           "type": "number"
         }
       }
@@ -18,13 +50,54 @@
   "templates": [
     {
       "paramId": "123",
-      "title": "1",
-      "description": "1",
+      "title": "template 1",
+      "description": "123",
       "formData": {
         "level": "easy",
-        "maxEnemyCount": 6
+        "maxEnemyCount": 12
       },
+      "level": "111",
       "id": 1
+    },
+    {
+      "paramId": "123",
+      "title": "012",
+      "description": "122",
+      "formData": {
+        "level": "easy",
+        "maxEnemyCount": 18
+      },
+      "id": 2
+    },
+    {
+      "paramId": "456",
+      "title": "123",
+      "description": "123",
+      "formData": {
+        "damage": 4,
+        "radius": 2
+      },
+      "id": 3
+    },
+    {
+      "paramId": "789",
+      "title": "11",
+      "description": "111",
+      "formData": {
+        "message": "11",
+        "numOfTimes": 2
+      },
+      "id": 4
+    },
+    {
+      "paramId": "789",
+      "title": "123",
+      "description": "1232",
+      "formData": {
+        "message": "1111",
+        "numOfTimes": 1
+      },
+      "id": 5
     }
   ]
 }

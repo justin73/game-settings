@@ -1,5 +1,5 @@
-import React from "react"
 import { useField } from "formik"
+import { PropTypes } from "prop-types"
 import {
   StyledSelect,
   StyledErrorMessage,
@@ -12,6 +12,7 @@ const SelectField = ({ label, ...props }) => {
   const [field, meta] = useField(props)
   return (
     <>
+      {/* eslint-disable-next-line react/prop-types */}
       <StyledLabel htmlFor={props.id || props.name}>{label}</StyledLabel>
       <StyledSelect {...field} {...props} />
       {meta.touched && meta.error ? (
@@ -19,6 +20,10 @@ const SelectField = ({ label, ...props }) => {
       ) : null}
     </>
   )
+}
+
+SelectField.propTypes = {
+  label: PropTypes.string
 }
 
 export default SelectField

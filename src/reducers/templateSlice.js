@@ -50,6 +50,12 @@ const TemplateSlice = createSlice({
       ...state,
       templateList: state.templateList.concat(action.payload)
     }),
+    removeTemp: (state, action) => ({
+      ...state,
+      templateList: state.templateList.filter(
+        (_, index) => index !== action.payload
+      )
+    }),
     submitTemp: state => ({
       ...state
     }),
@@ -66,7 +72,8 @@ export const {
   reset,
   addNewTemp,
   submitTemp,
-  deleteTemp
+  deleteTemp,
+  removeTemp
 } = TemplateSlice.actions
 
 export default TemplateSlice.reducer
