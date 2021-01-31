@@ -7,9 +7,27 @@
       "type": "object",
       "properties": {
         "level": {
-          "type": "string"
+          "type": "string",
+          "enum": [
+            "easy",
+            "hard"
+          ]
         },
         "maxEnemyCount": {
+          "type": "number"
+        }
+      }
+    },
+    {
+      "id": "456",
+      "title": "Grande Damage",
+      "description": "Another simple form example.",
+      "type": "object",
+      "properties": {
+        "damage": {
+          "type": "number"
+        },
+        "radius": {
           "type": "number"
         }
       }
@@ -18,13 +36,34 @@
   "templates": [
     {
       "paramId": "123",
-      "title": "1",
-      "description": "1",
+      "title": "123",
+      "description": "123",
+      "formData": {
+        "level": "hard",
+        "maxEnemyCount": 23
+      },
+      "level": "111",
+      "id": 1
+    },
+    {
+      "paramId": "123",
+      "title": "012",
+      "description": "122",
       "formData": {
         "level": "easy",
-        "maxEnemyCount": 6
+        "maxEnemyCount": 18
       },
-      "id": 1
+      "id": 2
+    },
+    {
+      "paramId": "456",
+      "title": "123",
+      "description": "123",
+      "formData": {
+        "damage": 4,
+        "radius": 2
+      },
+      "id": 3
     }
   ]
 }

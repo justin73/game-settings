@@ -1,29 +1,34 @@
-import React from "react"
+import React, { useState } from "react"
 import { Formik } from "formik"
 import { PropTypes } from "prop-types"
-import { useDispatch } from "react-redux"
+import { useDispatch, useSelector } from "react-redux"
 import { submitTemp } from "../../reducers/templateSlice"
+import { getSelectedParam } from "../../selectors"
+import { DifficultySchema, DamageSchema, MetaSchema } from "../Schemas"
 import {
   FormWrapper,
   FormMeta,
   FormFields,
-  FormField,
   FormAction,
   StlyedForm as Form
 } from "./__styled__/Form"
-import { DifficultySchema } from "./Schemas/Difficulty"
-import SelectField from "./Select"
+import SchemaForm from "./SchemaForm"
 import TextInputField from "./TextInput"
 
 const TempForm = ({ data }) => {
   const dispatch = useDispatch()
-  const onSubmit = async values => dispatch(submitTemp(values))
+  const selectedParam = useSelector(state => getSelectedParam(state))
+  const onSubmit = async values => {
+    dispatch(submitTemp(values))
+  }
 
   return (
     <FormWrapper>
       <Formik
         initialValues={data}
-        validationSchema={DifficultySchema}
+        validationSchema={
+          selectedParam.id === "123" ? DifficultySchema : DamageSchema
+        }
         onSubmit={onSubmit}
       >
         <Form>
@@ -41,20 +46,7 @@ const TempForm = ({ data }) => {
             />
           </FormMeta>
           <FormFields>
-            <FormField>
-              <SelectField label="Difficulty Level" name="formData.level">
-                <option value="">Select A Difficulty Level</option>
-                <option value="easy">Easy</option>
-                <option value="hard">Hard</option>
-              </SelectField>
-            </FormField>
-            <FormField>
-              <TextInputField
-                label="maxEnemyCount"
-                name="formData.maxEnemyCount"
-                type="number"
-              />
-            </FormField>
+            <SchemaForm data={data.formData} schema={selectedParam} />
           </FormFields>
           <FormAction>
             <button type="submit">{data.id ? "Save" : "Create"}</button>
@@ -67,17 +59,8 @@ const TempForm = ({ data }) => {
 
 TempForm.propTypes = {
   data: PropTypes.shape({
-    id: PropTypes.oneOfType([
-      PropTypes.string,
-      PropTypes.number,
-      PropTypes.object
-    ]),
-    title: PropTypes.string.isRequired,
-    description: PropTypes.string,
-    formData: PropTypes.shape({
-      level: PropTypes.string.isRequired,
-      maxEnemyCount: PropTypes.number.isRequired
-    })
+    formData: PropTypes.object,
+    id: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
   })
 }
 
