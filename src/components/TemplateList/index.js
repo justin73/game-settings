@@ -1,3 +1,4 @@
+import React from "react"
 import { nanoid } from "@reduxjs/toolkit"
 import { useSelector, useDispatch } from "react-redux"
 import {
@@ -56,7 +57,11 @@ const TemplateList = () => {
       {selectedParam ? (
         <ErrorBoundary title={`template list for ${selectedParam.title}`}>
           <ActionSection>
-            <Button type="primary" onClick={createNewTemp}>
+            <Button
+              data-testid="createBtn"
+              type="primary"
+              onClick={createNewTemp}
+            >
               Create
             </Button>
           </ActionSection>
@@ -70,7 +75,9 @@ const TemplateList = () => {
           ))}
         </ErrorBoundary>
       ) : (
-        <EmptyText>Please select a parameter</EmptyText>
+        <EmptyText data-testid="placeholderText">
+          Please select a parameter
+        </EmptyText>
       )}
     </ListWrapper>
   )

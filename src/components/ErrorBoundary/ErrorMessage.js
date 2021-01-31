@@ -1,3 +1,4 @@
+import React from "react"
 import BugReportIcon from "@material-ui/icons/BugReport"
 import { PropTypes } from "prop-types"
 import { ErrorMsgWrapper } from "./__styled__/ErrorMessage"

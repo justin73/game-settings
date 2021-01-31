@@ -1,12 +1,10 @@
 {
   "presets": [
+    "@babel/env",
     [
-      "env",
+      "@babel/react",
       {
-        "targets": {
-          "chrome": "68",
-          "node": "current"
-        }
+        "runtime": "automatic"
       }
     ]
   ]

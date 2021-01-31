@@ -1,3 +1,4 @@
+import React from "react"
 import { useEffect } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { loadParamList, setSelectedParam } from "../../reducers/paramSlice"
@@ -30,6 +31,7 @@ const ParamList = () => {
         {paramList.map(param => (
           <ParamItem
             key={param.id}
+            role="item"
             selected={selectedParam?.id === param.id}
             onClick={() => loadTempForParam(param.id)}
           >

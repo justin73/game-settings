@@ -1,4 +1,4 @@
-export const mockStore = {
+export const mockStoreState = {
   parameter: {
     isLoading: false,
     paramList: [
@@ -32,21 +32,7 @@ export const mockStore = {
         }
       }
     ],
-    selectedParam: {
-      id: "123",
-      title: "Difficulty",
-      description: "A simple form example.",
-      type: "object",
-      properties: {
-        level: {
-          type: "string",
-          enum: ["easy", "hard"]
-        },
-        maxEnemyCount: {
-          type: "number"
-        }
-      }
-    },
+    selectedParam: null,
     error: null
   },
   template: {
