@@ -55,17 +55,17 @@ As a complete version of this service, this application will evolve into 2 main 
 
 1. **parameter template creator** (the currnet feature implemented of the project)
 
-   this feature will allow in house designers/admins to config different parameter of the game by creating different sets of templates
+   this feature will allow in house designers/admins to config different parameters of the game by creating different sets of templates
 
 2. **parameter template consumer**
 
-   this feature will allow operators to directly apply a predefined template to the game.
+   this feature will allow operators to directly apply a predefined template to a parameter in the game.
 
 Break the service down into two parts will allow us to comply with future requirements such as
 
 1. **permission**
 
-   e.g. a live ops operator could only use existing template but cannot arbitrirarily create any random tempaltes, all the template creation has to be validated by an admin.
+   e.g. a live ops operator could only use existing template but cannot arbitrarily create any random templates, all the template creation has to be validated by an admin.
 
 2. **A/B test**
 
@@ -119,9 +119,9 @@ it contains all the components used in this app
 
 #### **Component Structure**
 
-**styled**: containers all the related styled component for a given component
+**/__ styled __**: containers all the related styled component for a given component
 
-**test**: test cases for a given component
+**/__ test __**: test cases for a given component
 
 **About container and presentational components**, in general, the rule of thumb is that i use `index.js` file to serve as the container for a given component, and all the remaining files under the same folder are presentational components
 
