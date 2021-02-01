@@ -10,3 +10,5 @@ export {
   getTempListLoadingStatus,
   getTempListLoadingError
 } from "./tempList"
+
+export { getSelectedMenu } from "./sidenav"

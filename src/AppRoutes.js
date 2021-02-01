@@ -13,7 +13,7 @@ const AppRoutes = () => (
       <Route
         exact
         component={props => <Dashboard {...props} />}
-        path="/dashboard"
+        path="/editor"
       />
     </Switch>
   </Suspense>

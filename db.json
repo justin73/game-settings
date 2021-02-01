@@ -29,6 +29,9 @@
         },
         "radius": {
           "type": "number"
+        },
+        "disabled": {
+          "type": "boolean"
         }
       }
     },
@@ -75,7 +78,8 @@
       "description": "123",
       "formData": {
         "damage": 4,
-        "radius": 2
+        "radius": 2,
+        "disabled": true
       },
       "id": 3
     },
@@ -90,12 +94,13 @@
       "id": 4
     },
     {
-      "paramId": "789",
-      "title": "123",
-      "description": "1232",
+      "paramId": "456",
+      "title": "12",
+      "description": "212",
       "formData": {
-        "message": "1111",
-        "numOfTimes": 1
+        "damage": 2,
+        "radius": 12,
+        "disabled": 0
       },
       "id": 5
     }
