@@ -2,12 +2,12 @@ import { PRIMITIVE } from "./CONST"
 import { mapToFields } from "./mapToFields"
 /**
  * fn to convert schema into form with matching fields
- * when properties field type is primitive (number, string, integer, boolean), it is a simple form input field
+ * when properties field type is primitive (number, string, boolean), it is a simple form input field
  * @param {object} schema
  * @param {object} form
  * @returns {object|array} depends on the type of current schma
  */
-export const convertSchemaToForm = ({ schema, form = null }) => {
+export const convertSchemaToForm = ({ schema }) => {
   let formField,
     fieldStruc,
     dataStruc = {}

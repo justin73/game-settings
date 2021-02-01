@@ -78,7 +78,7 @@
       "description": "123",
       "formData": {
         "damage": 4,
-        "radius": 2,
+        "radius": 19,
         "disabled": true
       },
       "id": 3
@@ -103,6 +103,16 @@
         "disabled": 0
       },
       "id": 5
+    },
+    {
+      "paramId": "123",
+      "title": "dsa",
+      "description": "dsadas",
+      "formData": {
+        "level": "hard",
+        "maxEnemyCount": 27
+      },
+      "id": 6
     }
   ]
 }

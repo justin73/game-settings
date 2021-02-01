@@ -5,7 +5,7 @@ import { PropTypes } from "prop-types"
 import { useDispatch, useSelector } from "react-redux"
 import { submitTemp } from "../../reducers/templateSlice"
 import { getSelectedParam } from "../../selectors"
-import { DifficultySchema, DamageSchema, WarningSchema } from "../Schemas"
+import { schemaMapping } from "../Schemas"
 import {
   FormWrapper,
   FormMeta,
@@ -22,18 +22,7 @@ const TempForm = ({ data }) => {
   const [validationSchema, setValidationSchema] = useState({})
 
   useEffect(() => {
-    setValidationSchema(
-      (() => {
-        switch (selectedParam.id) {
-          case "123":
-            return DifficultySchema
-          case "456":
-            return DamageSchema
-          default:
-            return WarningSchema
-        }
-      })()
-    )
+    setValidationSchema(schemaMapping(selectedParam.id))
   }, [selectedParam.id])
 
   const onSubmit = async values => {
