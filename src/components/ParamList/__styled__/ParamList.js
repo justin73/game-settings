@@ -21,16 +21,18 @@ export const ParamList = styled.div`
   padding-top: 15px;
 `
 
-export const ParamItem = styled.li`
+export const ParamItem = styled.div`
   width: 90%;
   background: ${props => (props.selected ? "#4e5b6c;" : "#46536d")};
   padding: 20px;
   border-radius: 5px;
   margin: 10px 0px;
   box-sizing: border-box;
+  height: 80px;
   font-size: 1.2em;
   font-weight: 700;
-  border: ${props => (props.selected ? "2px solid #eef4f2;" : "none")};
+  border: ${props =>
+    props.selected ? "2px solid #eef4f2;" : "2px solid transparent;"};
   &:hover {
     background: #7d9ba6;
     cursor: pointer;

@@ -3,7 +3,7 @@ import { IconButton } from "@material-ui/core"
 import Accordion from "@material-ui/core/Accordion"
 import styled from "styled-components"
 
-export const ListWrapper = styled.div`
+export const ListWrapper = styled.ul`
   width: calc(65vw - 20px);
   background: var(--black-200);
   display: flex;
@@ -19,7 +19,6 @@ export const ListWrapper = styled.div`
 `
 export const ActionSection = styled.div`
   width: 100%;
-  height: 50px;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -55,8 +54,9 @@ export const StyledIconButton = styled(({ children, ...others }) => (
 ))`
   &.customized {
     margin-left: auto;
-    width: 48px;
-    height: 48px;
+    display: flex;
+    align-items: flex-start;
+    height: 100%;
     svg {
       color: var(--blue-100);
     }
@@ -82,13 +82,19 @@ export const StlyedAccordion = styled(
 )`
   &.styledAccordion {
     color: var(--blue-100);
-
     width: unset !important;
     height: unset !important;
     background-color: #46536d;
     border-radius: 5px;
-    margin-bottom: 5px;
+    margin-bottom: 0px;
     flex: 1;
+    .MuiAccordionSummary-root {
+      height: 48px !important;
+      &.Mui-expanded {
+        min-height: 48px;
+        height: 48px;
+      }
+    }
     svg {
       color: var(--blue-100);
     }
